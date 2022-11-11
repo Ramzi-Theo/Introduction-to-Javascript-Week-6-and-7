@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 6</div>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg" style="width:100%">
+                  <div class="text">Caption Text</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 6</div>
+                  <img src="https://media.istockphoto.com/id/1270569720/photo/goat-looking-at-camera.jpg?s=612x612&w=0&k=20&c=_pLNx9D-WlXQg_PLQ5kRbmmK4YfHLRLsgTzs8z565vY=" style="width:100%">
+                  <div class="text">Caption Two</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 6</div>
+                  <img src="https://images.newscientist.com/wp-content/uploads/2019/07/09172512/205582.jpg?crop=1:1,smart&width=1200&height=1200&upscale=true" style="width:100%">
+                  <div class="text">Caption Three</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 6</div>
+                    <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80" style="width:100%">
+                    <div class="text">Caption Four</div>
+                  </div>
+                  <div class="mySlides fade">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="https://img.freepik.com/free-vector/dairy-cow-standing-cartoon-character_1308-92233.jpg?w=2000" style="width:100%">
+                    <div class="text">Caption Five</div>
+                  </div>
+                  <div class="mySlides fade">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/9017/production/_115478863_jerseycowcopyrightbbc.jpg" style="width:100%">
+                    <div class="text">Caption Six</div>
+                  </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                  <span class="dot" onclick="currentSlide(4)"></span> 
+                  <span class="dot" onclick="currentSlide(5)"></span> 
+                  <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+                
+                <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+                </script>
+  </body>
+  </html>
